@@ -1,4 +1,4 @@
-package com.myboot;
+package com.myboot.controller;
 
 import java.util.List;
 import java.util.Optional;
