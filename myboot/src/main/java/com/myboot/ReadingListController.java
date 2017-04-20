@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.actuate.metrics.CounterService;
+import org.springframework.boot.actuate.metrics.GaugeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,6 +25,13 @@ public class ReadingListController {
 	
 	@Autowired
 	private AmazonProperties amazonPros;
+	
+	@Autowired
+	private CounterService counterService;
+	
+	@Autowired
+	private GaugeService gaugeService;
+	
 
 	@Autowired
 	public ReadingListController(ReadingListRepostitory readingListRepo) {
@@ -44,6 +53,8 @@ public class ReadingListController {
 	public String addToReadingList(@PathVariable("reader") String reader, Book book){
 		book.setReader(reader);
 		readingListRepo.save(book);
+		counterService.increment("books.saved");
+		gaugeService.submit("books.last.saved", System.currentTimeMillis());
 		return "redirect:/{reader}";
 	}
 }
