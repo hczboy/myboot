@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class AsyncTaskService {
 
-	@Async
+	@Async("mypool")
 	public void printInt(int i){
 		System.out.println("##" + Thread.currentThread().getName() +" run printInt: " + i);
 	}
