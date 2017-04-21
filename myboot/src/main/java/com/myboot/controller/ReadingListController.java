@@ -18,7 +18,7 @@ import com.myboot.repository.ReadingListRepostitory;
 
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/readinglist")
 public class ReadingListController {
 	
 	private ReadingListRepostitory readingListRepo;
@@ -55,6 +55,6 @@ public class ReadingListController {
 		readingListRepo.save(book);
 		counterService.increment("books.saved");
 		gaugeService.submit("books.last.saved", System.currentTimeMillis());
-		return "redirect:/{reader}";
+		return "redirect:/readinglist/{reader}";
 	}
 }
