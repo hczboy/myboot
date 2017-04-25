@@ -18,7 +18,7 @@ public class TimeCountAspect {
 	
 	//@Pointcut("execution(* com.myboot..*.*(..))")
 	@Pointcut("@annotation(com.myboot.aspect.TimeCount)")
-	public void timeCountPointCut(){}
+	private void timeCountPointCut(){}
 	
 	@Around("timeCountPointCut()")
 	public Object doTimeCount(ProceedingJoinPoint joinPoint) throws Throwable{
