@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.myboot.aspect.TimeCount;
 import com.myboot.config.AmazonProperties;
 import com.myboot.entity.Book;
 import com.myboot.repository.ReadingListRepostitory;
@@ -38,7 +39,7 @@ public class ReadingListController {
 		super();
 		this.readingListRepo = readingListRepo;
 	}
-	
+	@TimeCount
 	@RequestMapping(value="/{reader}", method=RequestMethod.GET)
 	public String readerBooks(@PathVariable("reader") String reader, Model model){
 		List<Book> readingList = readingListRepo.findByReader(reader);
