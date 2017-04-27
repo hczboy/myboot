@@ -45,6 +45,9 @@ public class MyServlet extends HttpServlet{
 		// TODO Auto-generated method stub
 		System.out.println("+++++++++++++++++doPost+++++++++++");
 	
+		String str = IOUtils.toString(req.getInputStream());
+		
+				
 		SAXReader reader = new SAXReader();
 		reader.setErrorHandler(new ErrorHandler(){
 
@@ -70,8 +73,10 @@ public class MyServlet extends HttpServlet{
 		});
 		String msg = null;
 		try {
-			Document doc = reader.read(req.getInputStream());
-			msg = doc.selectSingleNode("//ProvisionRequestMessage/serialNumber").getText();
+			Document doc = reader.read(new StringReader(str));
+			String fs = "/ProvisionRequestMessage/serialNumber";
+			fs = "/ProvisionGroupRequestMessage/ProvisionRequestMessage[1]/serialNumber";
+			msg = doc.selectSingleNode(fs).getText();
 		} catch (DocumentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
