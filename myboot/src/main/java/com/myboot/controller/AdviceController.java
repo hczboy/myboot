@@ -31,11 +31,13 @@ public class AdviceController {
 	public @ResponseBody String hello(){
 		return helloService.hello();
 	}
-	
+	@Autowired
+	private String amazonId;
 	@RequestMapping("/amazonProp")
 	public @ResponseBody String getAmazonProp(){
 		//return MyEnv.getAmazonProperties().getAssociateId();
-		AmazonProperties amazonProp = (AmazonProperties)ctx.getBean("amazonProperties");
-		return amazonProp.getAssociateId();
+		/*AmazonProperties amazonProp = (AmazonProperties)ctx.getBean("amazonProperties");
+		return amazonProp.getAssociateId();*/
+		return amazonId;
 	}
 }
