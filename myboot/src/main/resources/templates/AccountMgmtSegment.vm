@@ -1,0 +1,9 @@
+#set ( $accountMgmtAteMap = {"CONFIG.security.accountMgmt.failedLoginThreshold":"failedLoginThreshold", 
+"CONFIG.security.accountMgmt.failedLoginWindow":"failedLoginWindow",
+ "CONFIG.security.accountMgmt.lockoutDuration":"lockoutDuration"})
+#needShow ( $accountMgmtAteMap )
+#if ( $isShown == "True")
+<accountMgmt>      
+#fill( $accountMgmtAteMap )##       
+</accountMgmt>
+#end

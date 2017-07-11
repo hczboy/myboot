@@ -96,6 +96,15 @@
 		<artifactId>jaxen</artifactId>
 	
 	</dependency>
+	<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity</artifactId>
+			<version>1.7</version>
+		</dependency>
+		<!-- <dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity-tools</artifactId>
+		</dependency> -->
 	</dependencies>
 
 	<build>

@@ -1,0 +1,7 @@
+#set ( $maintWindowAteMap = {"CONFIG.generalConfig.maintWindowEnabled":"maintWindowEnabled", "CONFIG.generalConfig.maintWindowStart":"maintWindowStart", "CONFIG.generalConfig.maintWindowDuration":"maintWindowDuration"} )
+#needShow ( $maintWindowAteMap )
+#if ( $isShown == "True")
+<maintWindow>
+#fill( $maintWindowAteMap )##       
+</maintWindow>
+#end

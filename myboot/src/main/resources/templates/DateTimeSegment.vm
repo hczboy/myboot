@@ -1,0 +1,10 @@
+#set ( $ateMap = {"CONFIG.dateTime.timeFormat":"timeFormat", "CONFIG.dateTime.timeZone":"timeZone", "CONFIG.dateTime.daylightSavingsTime":"daylightSavingsTime",
+"CONFIG.dateTime.timeServer":"timeServer","CONFIG.dateTime.timeServerURL":"timeServerURL",
+"CONFIG.dateTime.backupTimeServerURL":"backupTimeServerURL", "CONFIG.dateTime.dateFormat":"dateFormat"} )
+#reset##
+#needShow ( $ateMap )
+#if ( $isShown == "True")
+<dateTime>     
+#fill( $ateMap )##       
+</dateTime>
+#end

@@ -1,0 +1,8 @@
+#set ( $receiver3AteMap = {"internal.snmpReceiver3.serverAddr":"serverAddr", "internal.snmpReceiver3.version":"receiverVersion",
+ "internal.snmpReceiver3.trapInform":"trapType", "internal.snmpReceiver3.port":"port"} )
+#needShow ( $receiver3AteMap )
+#if ( $isShown == "True")
+<receivers>      
+#fill( $receiver3AteMap )##       
+</receivers>
+#end

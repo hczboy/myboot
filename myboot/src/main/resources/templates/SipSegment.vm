@@ -1,0 +1,11 @@
+#set ( $ateMap = {"SIP.enableSIP":"enableSIP", "SIP.uri":"uri", "SIP.sipProxyServer":"sipProxyServer", "SIP.sipRegistrarServer":"sipRegistrarServer",
+"SIP.transport":"transport", "SIP.inboundCallRate":"inboundCallRate", "SIP.outboundCallRate":"outboundCallRate", "SIP.verifyCert":"verifyCert",
+"SIP.enableLCSDirectory":"enableLCSDirectory", "SIP.LCSDirectoryName":"LCSDirectoryName", "SIP.useADLoginCredentials":"useADLoginCredentials",
+"SIP.autoServerDiscovery":"autoServerDiscovery", "SIP.backupSipProxyServer":"backupSipProxyServer", "SIP.backupSipRegistrarServer":"backupSipRegistrarServer",
+"SIP.sipServerType":"sipServerType", "SIP.sipUserName":"sipUserName", "SIP.sipPassword":"sipPassword"} )
+#needShow ( $ateMap )
+#if ( $isShown == "True")
+<SIP>      
+#fill( $ateMap )##       
+</SIP>
+#end

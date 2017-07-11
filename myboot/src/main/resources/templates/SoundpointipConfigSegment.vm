@@ -1,0 +1,8 @@
+#set ( $ateMap = {"CONFIG.soundpointipConfig.configURL":"configURL", "CONFIG.soundpointipConfig.logURL":"logURL"} )
+#reset##
+#needShow ( $ateMap )
+#if ( $isShown == "True")
+<soundpointipConfig>      
+#fill( $ateMap )##       
+</soundpointipConfig>
+#end

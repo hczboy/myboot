@@ -1,0 +1,12 @@
+#set ( $ateMap = {"CONFIG.QoS.serviceType":"serviceType", 
+"CONFIG.QoS.audio":"audio", "CONFIG.QoS.video":"video", "CONFIG.QoS.fecc":"fecc", 
+"CONFIG.QoS.maxTxUnitSize":"maxTxUnitSize", "CONFIG.QoS.enablePVEC":"enablePVEC", "CONFIG.QoS.enableRSVP":"enableRSVP", 
+"CONFIG.QoS.dynamicBandwidth":"dynamicBandwidth", "CONFIG.QoS.maxTxBandwidth":"maxTxBandwidth", 
+"CONFIG.QoS.maxRxBandwidth":"maxRxBandwidth", "CONFIG.QoS.mgmt":"mgmt"} )
+#reset##
+#needShow ( $ateMap )
+#if ( $isShown == "True")
+<QoS>      
+#fill( $ateMap )##       
+</QoS>
+#end

@@ -1,0 +1,14 @@
+#set ( $ateMap = {"CONFIG.systemUtility.displayContactList":"displayContactList", 
+"CONFIG.systemUtility.displayH323Extension":"displayH323Extension", 
+"CONFIG.systemUtility.displayPresenceButton":"displayPresenceButton", 
+"CONFIG.systemUtility.displayLeftElement":"displayLeftElement", 
+"CONFIG.systemUtility.displayRightElement":"displayRightElement", 
+"CONFIG.systemUtility.displayRecentCalls":"displayRecentCalls", "CONFIG.systemUtility.sleepTime":"sleepTime", 
+"CONFIG.systemUtility.directorySearch":"directorySearch"} )
+#reset##
+#needShow ( $ateMap )
+#if ( $isShown == "True")
+<systemUtility>      
+#fill( $ateMap )##       
+</systemUtility>
+#end

@@ -1,0 +1,8 @@
+#set ( $ateMap = {"CONFIG.locale.country": "country", "CONFIG.locale.language": "language"} )
+#reset##
+#needShow ( $ateMap )
+#if ( $isShown == "True")
+<locale>      
+#fill( $ateMap )##       
+</locale>
+#end

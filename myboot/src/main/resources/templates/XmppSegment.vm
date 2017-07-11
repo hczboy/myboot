@@ -1,0 +1,10 @@
+#set ( $ateMap = {"XMPP.enableXMPPDirectory":"enableXMPPDirectory", "XMPP.uri":"uri", "XMPP.jid": "jid",
+ "XMPP.allowIM": "allowIM", "XMPP.verifyCert":"verifyCert", 
+ "XMPP.autoAcceptInvitation":"autoAcceptInvitation", "XMPP.allowIMStorage":"allowIMStorage"} )
+#needShow ( $ateMap )
+#if ( $isShown == "True")
+<XMPP>
+#fill( $ateMap )##       
+</XMPP>
+#end
+ 

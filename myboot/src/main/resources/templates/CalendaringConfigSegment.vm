@@ -1,0 +1,12 @@
+#set ( $ateMap = {"CONFIG.calendaringConfig.enableCalendaring":"enableCalendaring", "CONFIG.calendaringConfig.exchangeServer":"exchangeServer", 
+"CONFIG.calendaringConfig.alertTone":"alertTone", 
+"CONFIG.calendaringConfig.displayPrivateMeetings":"displayPrivateMeetings", 
+"CONFIG.calendaringConfig.meetingReminderTime":"meetingReminderTime", "CONFIG.calendaringConfig.checkForNewMessage":"checkForNewMessage", 
+"CONFIG.calendaringConfig.useADLoginCredentials":"useADLoginCredentials", "emailAddress":"emailAddress"} )
+#reset##
+#needShow ( $ateMap )
+#if ( $isShown == "True")
+<calendaringConfig>      
+#fill( $ateMap )##       
+</calendaringConfig>
+#end

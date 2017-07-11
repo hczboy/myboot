@@ -1,0 +1,17 @@
+#set ( $ateMap = {"LDAP.enableLDAPDirectory":"enableLDAPDirectory", "LDAP.serverAddressDirectory":"serverAddressDirectory", "LDAP.serverAddressH350":"serverAddressH350",
+"LDAP.baseDNPerson":"baseDNPerson", "LDAP.baseDNGroup":"baseDNGroup", "LDAP.baseDNH350":"baseDNH350", "LDAP.queryGroupsList":"queryGroupsList",
+"LDAP.queryAllMembersOfGroup":"queryAllMembersOfGroup", "LDAP.querySearchMembersOfGroup":"querySearchMembersOfGroup",
+"LDAP.querySearchAllUsers":"querySearchAllUsers", "LDAP.queryAllMembersOfGroupWH350":"queryAllMembersOfGroupWH350", 
+"LDAP.querySearchMembersOfGroupWH350":"querySearchMembersOfGroupWH350", "LDAP.querySearchAllUsersWH350":"querySearchAllUsersWH350",
+"LDAP.attributeGroupName":"attributeGroupName", "LDAP.attributeDisplayName":"attributeDisplayName", "LDAP.attributeCommonName":"attributeCommonName",
+"LDAP.attributeFirstName":"attributeFirstName", "LDAP.attributeLastName":"attributeLastName", "LDAP.defaultGroup":"defaultGroup",
+"LDAP.maxResultSetSize":"maxResultSetSize", "LDAP.verifyCert":"verifyCert", "LDAP.usersOnly":"usersOnly", "LDAP.usersOrGroups":"usersOrGroups",
+"LDAP.withDevices":"withDevices", "LDAP.optQueryAllMembersOfGroup":"optQueryAllMembersOfGroup", "LDAP.optQuerySearchMembersOfGroup":"optQuerySearchMembersOfGroup",
+"LDAP.optQuerySearchAllUsers":"optQuerySearchAllUsers", "LDAP.adminGroup":"adminGroup", "LDAP.userGroup":"userGroup",
+"LDAP.extAuthAdsAddr":"extAuthAdsAddr"} )
+#needShow ( $ateMap )
+#if ( $isShown == "True")
+<LDAP>      
+#fill( $ateMap )##       
+</LDAP>
+#end

@@ -1,0 +1,10 @@
+#set ( $ateMap = {"CONFIG.callSettings.answerSingleCall":"answerSingleCall", "CONFIG.callSettings.answerMultipointCall":"answerMultipointCall",
+"CONFIG.callSettings.muteAutoAnswer":"muteAutoAnswer","CONFIG.callSettings.maxTimeInCall":"maxTimeInCall", "CONFIG.callSettings.useCallLog":"useCallLog",
+"CONFIG.callSettings.dialingMethod":"dialingMethod"} )
+#reset##
+#needShow ( $ateMap )
+#if ( $isShown == "True")
+<callSettings>      
+#fill( $ateMap )##       
+</callSettings>
+#end

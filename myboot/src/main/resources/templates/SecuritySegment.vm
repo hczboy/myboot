@@ -1,0 +1,28 @@
+#reset##
+#set ( $ateMap = {"CONFIG.security.secureMode":"secureMode", "CONFIG.security.useRoomPassword":"useRoomPassword", 
+"CONFIG.security.roomPassword":"roomPassword", "CONFIG.security.adminPassword":"adminPassword", 
+"CONFIG.security.meetingPassword":"meetingPassword", "CONFIG.security.SNMPEnabled":"SNMPEnabled",
+ "CONFIG.security.telnetEnabled":"telnetEnabled", "CONFIG.security.webEnabled":"webEnabled", 
+ "CONFIG.security.webAccessPort":"webAccessPort", "CONFIG.security.allowVideoDisplayOnWeb":"allowVideoDisplayOnWeb", 
+ "CONFIG.security.enableEncryption":"enableEncryption", "CONFIG.security.allowAddrBkEdit":"allowAddrBkEdit",
+ "CONFIG.security.allowUserSetup":"allowUserSetup", "CONFIG.security.ntlmVersion":"ntlmVersion", 
+ "CONFIG.security.adminId":"adminId", "CONFIG.security.secureProfile":"secureProfile",
+ "CONFIG.security.bannerShort":"bannerShort", "CONFIG.security.bannerLong":"bannerLong", 
+ "CONFIG.security.webServerVerifyCert":"webServerVerifyCert", "CONFIG.security.maxSSLVerifyDepth":"maxSSLVerifyDepth", 
+ "whiteList":"SubTemplate", "CONFIG.security.idleSessionTimeout":"idleSessionTimeout", "accountMgmt":"SubTemplate", 
+ "CONFIG.security.fips-140Mode":"fips-140Mode", "CONFIG.security.enableNIDS":"enableNIDS", 
+ "CONFIG.security.enableHttpsOnly":"enableHttpsOnly", "CONFIG.security.securityClassificationEnabled":"securityClassificationEnabled"} )
+#set ( $templateMap = {"whiteList": "templates/WhiteListSegment.vm", "accountMgmt":"templates/AccountMgmtSegment.vm"})
+#set ( $securitySubAttrList = ["CONFIG.security.whiteList.whiteListEnabled", 
+"internal.CONFIG.security.allowedIp1", "internal.CONFIG.security.allowedIp2", 
+"internal.CONFIG.security.allowedIp3", "internal.CONFIG.security.allowedIp4", 
+"internal.CONFIG.security.allowedIp5", "internal.CONFIG.security.allowedIp6", "internal.CONFIG.security.allowedIp7", 
+"internal.CONFIG.security.allowedIp8", "internal.CONFIG.security.allowedIp9", "internal.CONFIG.security.allowedIp10",
+"CONFIG.security.accountMgmt.failedLoginThreshold", "CONFIG.security.accountMgmt.failedLoginWindow", "CONFIG.security.accountMgmt.lockoutDuration"] ) 
+#needShow ( $ateMap $defaultAttrMap $securitySubAttrList )
+#if ( $isShown == "True")
+<security>
+#fill( $ateMap $templateMap $defaultAttrMap )##       
+</security>
+#end 
+ 

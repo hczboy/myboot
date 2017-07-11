@@ -1,0 +1,12 @@
+#set ( $ateMap = {"CONFIG.firewall.useFixedPorts":"useFixedPorts", "CONFIG.firewall.TCPPort":"TCPPort",
+ "CONFIG.firewall.UDPPort":"UDPPort", "CONFIG.firewall.H460FireWallTraversal":"H460FireWallTraversal", 
+ "CONFIG.firewall.NATConfig":"NATConfig", "CONFIG.firewall.NATWANAddress":"NATWANAddress", 
+ "CONFIG.firewall.NATH323Compatible":"NATH323Compatible", "CONFIG.firewall.addressDisplay":"addressDisplay", 
+ "CONFIG.firewall.enableSipKeepAlives":"enableSipKeepAlives"} )
+#reset##
+#needShow ( $ateMap )
+#if ( $isShown == "True")
+<firewall>      
+#fill( $ateMap )##       
+</firewall>
+#end

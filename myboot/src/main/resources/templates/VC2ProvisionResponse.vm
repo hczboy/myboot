@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProvisionResponseMessage xmlns:ns2="http://polycom.com/polaris">
+    <protocolVersion>1.0</protocolVersion>
+    <status>OK</status>
+    <provItems>
+        <provItemsVersion>1.0</provItemsVersion>
+         #parse("templates/XmppSegment.vm")
+         #parse("templates/H323Segment.vm")
+         #parse("templates/SipSegment.vm")
+         #parse("templates/LdapSegment.vm")
+        <CONFIG>
+            #parse("templates/GeneralConfigSegment.vm")
+            #parse("templates/CallSettingsSegment.vm")
+			#parse("templates/DateTimeSegment.vm")        
+			#parse("templates/LocaleSegment.vm")
+            #parse("templates/SecuritySegment.vm")
+            #parse("templates/FirewallSegment.vm")
+            #parse("templates/QosSegment.vm")  
+            #parse("templates/SystemUtilitySegment.vm")       
+            #parse("templates/SystemIdentitySegment.vm")
+            #parse("templates/SoundpointipConfigSegment.vm")
+            #parse("templates/CalendaringConfigSegment.vm")
+			#parse("templates/SnmpConfigSegment.vm")
+            #parse("templates/CdrSegment.vm")              
+        </CONFIG>
+    </provItems>
+</ProvisionResponseMessage>

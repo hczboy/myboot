@@ -1,0 +1,8 @@
+#set ( $ateMap = {"CONFIG.systemIdentity.systemDisplayName":"systemDisplayName", "CONFIG.systemIdentity.hostName":"hostName"} )
+#reset##
+#needShow ( $ateMap )
+#if ( $isShown == "True")
+<systemIdentity>      
+#fill( $ateMap )##       
+</systemIdentity>
+#end

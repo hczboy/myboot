@@ -1,0 +1,12 @@
+#set ( $whiteListAteMap = {"CONFIG.security.whiteList.whiteListEnabled":"whiteListEnabled", 
+"internal.CONFIG.security.allowedIp1":"allowedIp", "internal.CONFIG.security.allowedIp2":"allowedIp", 
+"internal.CONFIG.security.allowedIp3":"allowedIp", "internal.CONFIG.security.allowedIp4":"allowedIp",
+ "internal.CONFIG.security.allowedIp5":"allowedIp", "internal.CONFIG.security.allowedIp6":"allowedIp", 
+ "internal.CONFIG.security.allowedIp7":"allowedIp", "internal.CONFIG.security.allowedIp8":"allowedIp", 
+ "internal.CONFIG.security.allowedIp9":"allowedIp", "internal.CONFIG.security.allowedIp10":"allowedIp"} )
+#needShow ( $whiteListAteMap )
+#if ( $isShown == "True")
+<whiteList>      
+#fill( $whiteListAteMap )##       
+</whiteList>
+#end

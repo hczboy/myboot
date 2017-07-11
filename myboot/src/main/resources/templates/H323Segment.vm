@@ -1,0 +1,9 @@
+#set ( $ateMap = {"H323.enableH323":"enableH323", "H323.gatekeeperEnable":"gatekeeperEnable", "H323.gatekeeperAddress":"gatekeeperAddress", "H323.h323alias":"h323alias", 
+"H323.e164number":"e164number", "H323.inboundCallRate":"inboundCallRate", "H323.outboundCallRate":"outboundCallRate", "H323.usePathNavForMP":"usePathNavForMP",
+ "CONFIG.firewall.H460FireWallTraversal":"usePathNavForMP", "CONFIG.firewall.H460FireWallTraversal":"H460FireWallTraversal", "H323.systemName":"systemName"} )
+#needShow ( $ateMap )
+#if ( $isShown == "True")
+<H323>      
+#fill( $ateMap )##       
+</H323>
+#end

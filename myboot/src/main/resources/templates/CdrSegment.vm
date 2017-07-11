@@ -1,0 +1,11 @@
+#set ( $ateMap = {"cdr.enableCDR":"enableCDR", "cdr.cdrServer":"CDRServer", 
+"cdr.cdrServerAddress":"CDRServerAddress", "cdr.transportType":"transport", 
+"cdr.useADLoginCredentials":"useADLoginCredentials", "cdr.cdrUsername":"CDRUsername", 
+"cdr.cdrPassword":"CDRPassword"} )
+#reset##
+#needShow ( $ateMap )
+#if ( $isShown == "True")
+<CDR>      
+#fill( $ateMap )##       
+</CDR>
+#end

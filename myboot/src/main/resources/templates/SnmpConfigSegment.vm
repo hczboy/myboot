@@ -1,0 +1,22 @@
+#reset##
+#set ( $ateMap = {"CONFIG.security.SNMPEnabled":"SNMPEnabled", "CONFIG.snmpConfig.enableV1":"enableV1", 
+"CONFIG.snmpConfig.enableV2C":"enableV2C", "CONFIG.snmpConfig.enableV3":"enableV3", 
+"CONFIG.snmpConfig.transport":"transport", "CONFIG.snmpConfig.port":"port", 
+"CONFIG.snmpConfig.readOnlyCommunity":"readOnlyCommunity", "CONFIG.snmpConfig.contactName":"contactName", 
+"CONFIG.snmpConfig.locationName":"locationName", "CONFIG.snmpConfig.user":"user", "CONFIG.snmpConfig.authType":"authType", 
+"CONFIG.snmpConfig.authPassword":"authPassword", "CONFIG.snmpConfig.encryptionType":"encryptionType", 
+"CONFIG.snmpConfig.encryptionPassword":"encryptionPassword", "receivers1":"SubTemplate", "receivers2":"SubTemplate", 
+"receivers3":"SubTemplate"})
+#set ( $templateMap = {"receivers1": "templates/Receivers1Segment.vm", "receivers2": "templates/Receivers2Segment.vm",
+ "receivers3": "templates/Receivers3Segment.vm"})
+#set ( $snmpConfigSubAttrList = ["internal.snmpReceiver1.serverAddr", "internal.snmpReceiver1.version", 
+"internal.snmpReceiver1.trapInform", "internal.snmpReceiver1.port", "internal.snmpReceiver2.serverAddr", 
+"internal.snmpReceiver2.version", "internal.snmpReceiver2.trapInform", 
+"internal.snmpReceiver2.port","internal.snmpReceiver3.serverAddr", "internal.snmpReceiver3.version", 
+"internal.snmpReceiver3.trapInform", "internal.snmpReceiver3.port"] ) 
+#needShow ( $ateMap $defaultAttrMap $snmpConfigSubAttrList )
+#if ( $isShown == "True")
+<snmpConfig>
+#fill( $ateMap $templateMap $defaultAttrMap )##       
+</snmpConfig>
+#end 

@@ -1,0 +1,14 @@
+#set ( $ateMap = {"CONFIG.generalConfig.softwareUpdateCheckInterval":"softwareUpdateCheckInterval", "CONFIG.generalConfig.profileUpdateCheckInterval":"profileUpdateCheckInterval",
+"CONFIG.generalConfig.heartbeatPostInterval":"heartbeatPostInterval", "CONFIG.generalConfig.inCallStatsPostInterval":"inCallStatsPostInterval", "CONFIG.generalConfig.deviceData":"deviceData",
+"maintWindow":"SubTemplate","CONFIG.generalConfig.logFileLocation":"logFileLocation", "CONFIG.generalConfig.maxWebSessions":"maxWebSessions"} )
+#set ( $templateMap = {"maintWindow": "templates/MaintWindowSegment.vm"})
+#set ( $defaultAttrMap = {"CONFIG.generalConfig.softwareUpdateCheckInterval":"PT86400S", "CONFIG.generalConfig.profileUpdateCheckInterval":"PT3600S", 
+"CONFIG.generalConfig.heartbeatPostInterval":"PT600S", "CONFIG.generalConfig.inCallStatsPostInterval":"PT60S"} )
+#set ( $generalConfigSubAttrList = ["CONFIG.generalConfig.maintWindowEnabled", "CONFIG.generalConfig.maintWindowStart", "CONFIG.generalConfig.maintWindowDuration"] ) 
+#needShow ( $ateMap $defaultAttrMap $generalConfigSubAttrList )
+#if ( $isShown == "True")
+<generalConfig>
+#fill( $ateMap $templateMap $defaultAttrMap )##       
+</generalConfig>
+#end 
+ 

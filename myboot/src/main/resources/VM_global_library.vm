@@ -1,0 +1,54 @@
+#*
+	Macro needShow is used to indicate if the root element should be displayed.
+	the process is simply described as below:
+	1. set default $isShown = "False";
+	2. go through each profile name related to sub element to see if the profile value is defined or it has default value, if yes, return true;
+	3. go through every profile name defined in subTemplate to see if the profile value is defined, if yes, return true;
+	4. otherwise return $isShown = "False";
+*#
+#macro( needShow $attrToElemMap $defaultAttrMap $subAttrList )
+#set( $isShown = "False" )
+#foreach( $key in $attrToElemMap.keySet() )
+#if ( $provisionProfile.getProvisionAttributeValue($key) || $defaultAttrMap.get($key) )
+#set( $isShown = "True")
+#break
+#end
+#end
+#if ( $isShown == "True" )
+#break
+#else
+#foreach( $attr in $subAttrList )
+#if ( $provisionProfile.getProvisionAttributeValue($attr) )
+#set( $isShown = "True" )
+#break
+#end
+#end
+#end
+#end
+
+#*
+	Macro fill is used to fill element with defined profile value
+*#
+#macro( fill $attrToElemMap $templateMap $defaultAttrMap)##
+#foreach( $key in $attrToElemMap.keySet() )##
+#if ( $provisionProfile.getProvisionAttributeValue($key) || $defaultAttrMap.get($key) )##
+#set ( $elementName = $attrToElemMap.get($key) )##
+#if ( $provisionProfile.getProvisionAttributeValue($key) )##
+<$elementName>$provisionProfile.getProvisionAttributeValue($key)</$elementName>
+#elseif ( $defaultAttrMap.get($key) )##
+<$elementName>$defaultAttrMap.get($key)</$elementName>	
+#end##
+#elseif ( $attrToElemMap.get($key) == "SubTemplate")##
+#parse($templateMap.get($key))##
+#end##
+#end##
+#end##
+
+#*
+	Macro reset is used to reset internal variable before calling neeShow and fill
+*#
+#macro( reset )##
+#set ( $defaultAttrMap = {"none":"none"} )##
+#set ( $templateMap = {"none":"none"} )##
+#set ( $subAttrList = ["none"] )## 
+#end##
