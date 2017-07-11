@@ -13,6 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.myboot.service.AsyncTaskService;
 
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+
 @RestController
 @RequestMapping("/async")
 public class AsyncTaskController {
@@ -22,10 +26,12 @@ public class AsyncTaskController {
 	@Autowired
 	private AsyncTaskService asyncTaskService;
 
+	@ApiOperation(value="trigger async method printInt", notes="test async method")
+	//@ApiImplicitParam(name="p", value="the int value should be print", required=true, dataType="int")
 	@RequestMapping(value = "/printint/{p}", method = RequestMethod.GET)
-	public String runPrintInt(@PathVariable("p") int ip) {
+	public String runPrintInt(@ApiParam(value="the int value should be print") @PathVariable("p") Integer p) {
 		log.debug("runPrintInt+");
-		asyncTaskService.printInt(ip);
+		asyncTaskService.printInt(p);
 		return "ok";
 
 	}
